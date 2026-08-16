@@ -379,7 +379,11 @@ body {
 ========================= */
 
 @media (max-width: 600px) {
-
+    body {
+        background-image: url("images/Mobile.png");
+        background-position: center;
+        background-size: cover;
+    }
     .player {
         width: 80vw;       /* 80% of phone screen width */
         height: 82px;      /* DO NOT CHANGE HEIGHT */
@@ -570,6 +574,14 @@ body {
             {
                 name: "Lag Jaa Gale",
                 file: "songs/Lag_Jaa_Gale.mp3"
+            },
+            {
+                name: "Chand Ko Utray",
+                file: "songs/Chand_Ko_Utray.mp3"
+            },
+            {
+                name: "Un Ke Andaz-E-Karam",
+                file: "songs/Un_Ka_Andaz.mp3"
             }
 
         ];
@@ -702,7 +714,7 @@ body {
 
         audioPlayer.addEventListener("ended", function () {
 
-            currentSong++;
+            currentSong = Math.floor(Math.random() * songs.length);
 
             if (currentSong >= songs.length) {
 
@@ -825,7 +837,7 @@ body {
            FIRST SONG
         ========================= */
 
-        loadSong(0);
+        loadSong(Math.floor(Math.random() * songs.length));
 
     </script>
 
